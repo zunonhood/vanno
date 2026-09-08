@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0c0b0a">
+<title>vanno. - the PONS treasury</title>
+<link rel="icon" type="image/png" href="assets/vanno.png">
+<link rel="apple-touch-icon" href="assets/vanno.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0c0b0a;--panel:#121110;--text:#e8e5dc;--muted:#97948a;--faint:#68665e;--line:#24231d;--accent:#b9dc42;--accent-hi:#d5f36d;--blue:#65c8ed;--serif:"Source Serif 4",Georgia,serif;--mono:"IBM Plex Mono",Consolas,monospace}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;scrollbar-color:var(--line) var(--bg)}body{background:var(--bg);color:var(--text);font-family:var(--serif);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}::selection{background:rgba(185,220,66,.22)}a{color:inherit}.mono{font-family:var(--mono)}button{font:inherit}
+.layout{display:grid;grid-template-columns:296px minmax(0,1fr);max-width:1220px;margin:auto;padding:0 32px}.rail{position:sticky;top:0;align-self:start;height:100svh;display:flex;flex-direction:column;padding:42px 36px 32px 0;border-right:1px solid var(--line);overflow-y:auto;scrollbar-width:none}.rail::-webkit-scrollbar{display:none}.identity{display:flex;align-items:center;gap:13px}.identity img{width:46px;height:46px;object-fit:cover;border:1px solid var(--line)}.wordmark{font-size:40px;line-height:1;font-weight:600;letter-spacing:-.03em}.wordmark:after{content:".";color:var(--accent)}.tagline{margin-top:15px;font:10px/1.9 var(--mono);letter-spacing:.15em;text-transform:uppercase;color:var(--accent)}.definition,.pitch{margin-top:15px;font-size:12.5px;line-height:1.65;color:var(--faint)}.definition i,.pitch b{color:var(--muted);font-weight:400}.links{margin-top:20px;display:flex;flex-direction:column;gap:7px;font:11px var(--mono);letter-spacing:.07em}.links a,.links button{width:100%;display:flex;justify-content:space-between;align-items:center;text-decoration:none;color:var(--muted);border:1px solid var(--line);background:none;padding:8px 12px;cursor:pointer;transition:.15s}.links a:hover,.links button:hover{color:var(--accent-hi);border-color:rgba(185,220,66,.45)}.links .ca{display:block;text-align:left}.ca .lbl{display:flex;justify-content:space-between;color:var(--accent);letter-spacing:.13em}.ca .addr{display:block;margin-top:5px;font-size:9px;line-height:1.4;color:var(--faint);word-break:break-all}.constants{margin-top:auto;padding-top:20px;font:10px/2 var(--mono);color:var(--faint);letter-spacing:.03em}.constants .ct{text-transform:uppercase;letter-spacing:.17em;color:#4f4d46;margin-bottom:4px}.cr{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding:2px 0}.cr span:last-child{color:var(--muted);text-align:right}.rail-foot{margin-top:16px;display:flex;justify-content:space-between;font:9px var(--mono);letter-spacing:.09em;color:var(--faint)}.rail-foot a{text-decoration:none}.flow{padding:44px 0 130px 52px;min-width:0}.panel{border:1px solid var(--line);background:var(--panel)}.chart-host{padding:16px 6px 4px}.chart{width:100%;height:auto;display:block}.caption{font:11px/1.75 var(--mono);color:var(--muted);padding:7px 18px 16px;border-top:1px solid var(--line);margin-top:8px}.caption p{margin:9px 0 0}.caption b{color:var(--text);font-weight:500}.caption .tag{color:var(--accent-hi)}.caption .note{color:var(--faint);font-size:9.5px}
+section.s{padding:58px 0 6px}.shead{display:flex;align-items:baseline;gap:18px;margin-bottom:22px}.shead .n{font:12px var(--mono);color:var(--accent);letter-spacing:.1em;flex:none}.shead h2{font-size:25px;font-weight:600;letter-spacing:-.01em;white-space:nowrap}.shead .rule{flex:1;height:1px;background:var(--line);position:relative;top:-6px}.body{max-width:650px}.s p{font-size:16px;line-height:1.85;color:#b3b0a6;margin-bottom:15px}.s p:last-child{margin-bottom:0}.s p b{color:var(--text);font-weight:600}.s .m{font-family:var(--mono);font-size:.9em}.s .a{color:var(--accent-hi)}.s ul{list-style:none;margin:7px 0 16px}.s li{font-size:15.5px;line-height:1.8;color:#b3b0a6;padding-left:18px;position:relative;margin-bottom:7px}.s li:before{content:"-";position:absolute;left:0;color:var(--accent)}.s li b{color:var(--text)}.band{margin:27px 0 6px;padding:26px 28px;border:1px solid var(--line);border-left:2px solid var(--accent);background:var(--panel);font-size:18.5px;font-style:italic;line-height:1.75}.band .m{font:15px var(--mono);color:var(--accent-hi)}
+.mechanism{display:grid;grid-template-columns:1fr 34px 1fr 34px 1fr;margin:23px 0 8px;max-width:700px}.mechanism div{border:1px solid var(--line);background:var(--panel);padding:16px}.mechanism span{display:block;font:9px var(--mono);color:var(--accent);margin-bottom:10px}.mechanism strong{font-size:15px}.mechanism p{font-size:11px;line-height:1.55;margin:7px 0 0}.mechanism>i{display:grid;place-items:center;color:var(--faint);font:normal 14px var(--mono)}
+table.cov{width:100%;max-width:650px;border-collapse:collapse;margin:8px 0 16px}.cov td{padding:11px 13px;border:1px solid var(--line);font-size:14.5px;line-height:1.6;color:#b3b0a6;vertical-align:top}.cov td:first-child{width:145px;font:12px var(--mono);color:var(--accent-hi);white-space:nowrap;background:var(--panel)}.formula{margin:24px 0;border:1px solid var(--line);background:#080706;padding:22px 25px;font:13px/1.8 var(--mono);color:var(--muted);overflow:auto}.formula b{color:var(--accent-hi);font-weight:500}.formula .comment{color:#5f5d56}.simulator{margin:25px 0 5px;border:1px solid var(--line);background:var(--panel);padding:20px;max-width:650px}.sim-head{display:flex;justify-content:space-between;font:9px var(--mono);color:var(--faint);margin-bottom:18px}.sim-head span:last-child{color:var(--accent)}.sim-row{display:grid;grid-template-columns:1fr 44px 1fr 44px 1fr;align-items:end}.sim-cell label{display:block;font:9px var(--mono);color:var(--faint);margin-bottom:7px}.sim-cell input{width:100%;border:0;border-bottom:1px solid var(--line);background:none;color:var(--text);font:23px var(--mono);padding:4px 0;outline:0}.sim-cell strong{display:block;font:23px var(--mono);color:var(--accent-hi);padding-bottom:4px;border-bottom:1px solid var(--line)}.sim-row>i{text-align:center;padding-bottom:10px;font:normal 13px var(--mono);color:var(--faint)}.sim-note{margin-top:14px!important;font:9px/1.6 var(--mono)!important;color:var(--faint)!important}
+.source{margin-top:64px;border:1px solid var(--line);background:var(--panel)}.source-head{padding:14px 18px;font:11px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between}.source-head span:last-child{color:var(--accent)}.source pre{font:12px/1.7 var(--mono);background:#070605;color:var(--text);border-top:1px solid var(--line);padding:20px 22px 26px;overflow:auto;white-space:pre}.source .c{color:#77746c;font-style:italic}.source .k{color:var(--accent-hi)}.source .v{color:#b4c6a0}.roadmap{display:grid;grid-template-columns:repeat(3,1fr);max-width:700px;margin-top:22px}.roadmap div{border:1px solid var(--line);padding:17px;min-height:165px;margin-right:-1px}.roadmap span{font:9px var(--mono);color:var(--accent)}.roadmap strong{display:block;font-size:16px;margin:35px 0 8px}.roadmap p{font-size:11px;line-height:1.55;margin:0}.risk{border:1px solid var(--line);background:var(--panel);padding:22px 25px;margin-top:22px}.risk h3{font:10px var(--mono);color:var(--accent);letter-spacing:.1em;margin-bottom:13px}.risk p{font-size:13px;line-height:1.75;margin:0;color:var(--muted)}footer.foot{margin-top:70px;padding-top:24px;border-top:1px solid var(--line);font:10px/2.1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--faint)}
+.toast{position:fixed;right:20px;bottom:20px;background:var(--accent);color:#11120d;padding:10px 14px;font:10px var(--mono);opacity:0;transform:translateY(10px);transition:.2s;z-index:20}.toast.show{opacity:1;transform:none}
+@media(max-height:760px){.constants{display:none}}@media(max-width:920px){.layout{grid-template-columns:1fr;padding:0 18px}.rail{position:static;height:auto;border-right:0;border-bottom:1px solid var(--line);padding:28px 0 24px}.constants{display:none}.flow{padding:30px 0 90px}.identity img{width:40px;height:40px}.mechanism{grid-template-columns:1fr}.mechanism>i{height:30px;transform:rotate(90deg)}.roadmap{grid-template-columns:1fr}.roadmap div{margin:0 0 -1px}.shead h2{white-space:normal;font-size:22px}}@media(max-width:560px){.layout{padding:0 14px}.wordmark{font-size:34px}.flow{padding-top:22px}.caption{font-size:9px}.s p{font-size:15px}.band{font-size:17px;padding:20px}.sim-row{grid-template-columns:1fr}.sim-row>i{height:34px;padding:5px;transform:rotate(90deg)}.source pre{font-size:10px}.cov td{display:block;width:100%!important}.cov td:first-child{border-bottom:0}.chart-host{overflow:hidden}.chart{min-width:650px;transform:translateX(-18px)}}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside class="rail">
+  <div class="identity"><img src="assets/vanno.png" alt="VANNO"><div class="wordmark">vanno</div></div>
+  <div class="tagline">PONS treasury - continuous accumulation<br>Robinhood Chain - pons v2</div>
+  <p class="definition"><i>vanno</i>, n. - an onchain treasury vehicle whose activity converts market volume into a growing strategic reserve of PONS.</p>
+  <div class="links">
+    <a href="https://x.com/vannorunexe" target="_blank" rel="noopener"><span>@vannorunexe</span><span>&nearr;</span></a>
+    <button class="ca" type="button"><span class="lbl">VANNO CONTRACT <i>pending</i></span><span class="addr">TBA</span></button>
+    <button class="ca" id="pons-ca" data-ca="0x39dBED3a2bd333467115dE45665cC57F813C4571"><span class="lbl">PONS CONTRACT <i id="copy-hint">copy</i></span><span class="addr">0x39dBED3a2bd333467115dE45665cC57F813C4571</span></button>
+  </div>
+  <p class="pitch">Every VANNO trade serves two mandates: <b>grow the PONS reserve and repurchase VANNO from circulation.</b> Three percent enters. Every unit is allocated.</p>
+  <div class="constants">
+    <div class="ct">launch constants</div>
+    <div class="cr"><span>ticker</span><span>$VANNO</span></div>
+    <div class="cr"><span>venue</span><span>pons v2</span></div>
+    <div class="cr"><span>network</span><span>Robinhood - 4663</span></div>
+    <div class="cr"><span>creator tax</span><span>3.00%</span></div>
+    <div class="cr"><span>reserve asset</span><span>PONS</span></div>
+    <div class="cr"><span>PONS treasury</span><span>2.00%</span></div><div class="cr"><span>VANNO buyback</span><span>1.00%</span></div><div class="cr"><span>operations</span><span>0.00%</span></div>
+    <div class="cr"><span>VANNO CA</span><span>TBA</span></div>
+  </div>
+  <div class="rail-foot"><span id="chain-state">chain online</span><a href="#s8">risks &darr;</a></div>
+</aside>
+
+<main class="flow">
+  <div class="panel" id="instrument">
+    <div class="chart-host"><svg viewBox="0 0 720 400" class="chart" id="chart" aria-label="Illustrative VANNO treasury accumulation model"></svg></div>
+    <div class="caption">
+      <p><span class="tag">Left - the three-percent function.</span> This is not market history. It is the deterministic relationship committed at launch: for every 100 units of VANNO trading volume, <b>3 units accrue as creator tax</b> in the pairing asset. The line is mathematical, so it can be shown before the token begins trading.</p>
+      <p><span class="tag">Right - the allocation route.</span> pons accounts for the full 3% creator tax in fee escrow. Policy then assigns <b>2% of volume to PONS acquisition</b> and <b>1% to VANNO repurchase and permanent removal from circulation</b>. No portion is reserved for team operations.</p>
+      <p class="note">Explanatory instrument only. No token price, trading volume, tax balance or PONS holding is represented as live data. Those fields remain TBA until the relevant addresses exist.</p>
+    </div>
+  </div>
+
+  <section class="s" id="s1">
+    <div class="shead"><span class="n">01</span><h2>What VANNO is</h2><span class="rule"></span></div>
+    <div class="body">
+      <p>VANNO is an onchain treasury project built around two linked objectives: <b>accumulate PONS and reduce circulating VANNO through market buybacks.</b> It is issued through pons v2 on Robinhood Chain with a creator tax fixed at three percent when the launch is created.</p>
+      <p>The project borrows the central insight of digital-asset treasury companies without pretending that an onchain token is a registered public share. A treasury company uses access to capital and market demand to expand a strategic reserve. VANNO uses protocol-native trading revenue. Every buy and every sell produces a measurable inflow in the pairing asset; that inflow can be claimed, converted and placed into a public PONS treasury.</p>
+      <p>The product is therefore not merely the VANNO token. It is the <b>relationship between VANNO activity, the PONS reserve and VANNO circulating supply</b>: two percent grows the reserve while one percent funds permanent market removal.</p>
+    </div>
+    <div class="band">The token is the activity layer. PONS is the reserve. Buyback is the supply policy. <span class="m">No tax allocation goes to operations.</span></div>
+  </section>
+
+  <section class="s" id="s2">
+    <div class="shead"><span class="n">02</span><h2>The treasury engine</h2><span class="rule"></span></div>
+    <div class="body">
+      <p>pons v2 separates an optional creator tax from its standard trading fee. VANNO sets that creator tax to <span class="m a">300 basis points</span>. The rate is committed at launch and cannot later be raised. Fees are assessed in the launch's pairing asset rather than deducted from VANNO itself.</p>
+    </div>
+    <div class="mechanism">
+      <div><span>01 - ACTIVITY</span><strong>VANNO trades</strong><p>Buy and sell volume passes through the pons curve and, after graduation, its Uniswap v4 hook.</p></div><i>&rarr;</i>
+      <div><span>02 - CAPTURE</span><strong>3% is accrued</strong><p>The creator tax is accounted for by pons and becomes claimable by the designated recipient.</p></div><i>&rarr;</i>
+      <div><span>03 - ALLOCATE</span><strong>2% reserve / 1% buyback</strong><p>Two parts acquire PONS. One part repurchases VANNO and removes it from circulation.</p></div>
+    </div>
+    <div class="body">
+      <p>If VANNO is paired directly with PONS, the reserve allocation already arrives in the target asset while the buyback allocation purchases VANNO. If paired with ETH, two thirds of claimed ETH acquires PONS and one third repurchases VANNO. The team receives none of the creator-tax allocation.</p>
+    </div>
+  </section>
+
+  <section class="s" id="s3">
+    <div class="shead"><span class="n">03</span><h2>The three-percent rule</h2><span class="rule"></span></div>
+    <div class="body">
+      <p>The creator tax is deliberately simple. For gross trading volume <span class="m">V</span>, the gross creator-tax accrual <span class="m">T</span> is:</p>
+    </div>
+    <div class="formula"><span class="comment">// the complete creator-tax allocation</span><br><b>T = V &times; 0.03</b><br><b>PONS budget = V &times; 0.02</b><br><b>VANNO buyback budget = V &times; 0.01</b><br><span class="comment">// operations allocation = 0</span></div>
+    <div class="body">
+      <p>The full three percent is protocol-directed: two percentage points toward PONS and one toward VANNO buyback. Market execution still involves gas and price impact, but there is no team or operations percentage. VANNO reports gross allocation and net assets received separately.</p>
+    </div>
+    <div class="simulator">
+      <div class="sim-head"><span>TAX ACCRUAL SIMULATOR</span><span>3.00% FIXED</span></div>
+      <div class="sim-row">
+        <div class="sim-cell"><label for="volume">TRADING VOLUME</label><input id="volume" value="100" inputmode="decimal"></div><i>&rarr;</i>
+        <div class="sim-cell"><label>CREATOR TAX</label><strong>3.00%</strong></div><i>=</i>
+        <div class="sim-cell"><label>GROSS ACCRUAL</label><strong id="tax-result">3.00 ETH</strong></div>
+      </div>
+      <p class="sim-note" id="split-result">At 100 ETH volume: 2.00 ETH targets PONS / 1.00 ETH targets VANNO buyback / 0 operations.</p>
+    </div>
+  </section>
+
+  <section class="s" id="s4">
+    <div class="shead"><span class="n">04</span><h2>Why PONS</h2><span class="rule"></span></div>
+    <div class="body">
+      <p>PONS is the reference token of the pons launch ecosystem on Robinhood Chain. It sits close to the source of VANNO's own distribution, market structure and community. A PONS treasury therefore creates an ecosystem-native balance sheet rather than a reserve thesis imported from another chain.</p>
+      <p>The choice is strategic, not risk-free. PONS liquidity, holder concentration, protocol adoption and market price can all change. VANNO does not claim that accumulating PONS guarantees appreciation. It claims something narrower and verifiable: <b>the project will make its PONS acquisition policy, balances and transactions observable.</b></p>
+      <p>The long-term metric is not a slogan or a chart of VANNO's market price. It is <span class="m a">PONS per circulating VANNO</span>. Once the token and treasury addresses exist, that ratio can be independently recomputed from public chain state.</p>
+    </div>
+  </section>
+
+  <section class="s" id="s5">
+    <div class="shead"><span class="n">05</span><h2>Treasury accounting</h2><span class="rule"></span></div>
+    <div class="body"><p>VANNO will separate operational metrics so that observers can follow the entire route from trading activity to reserve holdings.</p></div>
+    <table class="cov">
+      <tr><td>gross volume</td><td>Total VANNO buy and sell volume settled by pons.</td></tr>
+      <tr><td>tax accrued</td><td>Creator-tax balance attributed to VANNO before it is claimed.</td></tr>
+      <tr><td>tax claimed</td><td>Pairing asset moved from fee escrow to the designated collector.</td></tr>
+      <tr><td>execution cost</td><td>Gas, slippage and price impact incurred while acquiring PONS.</td></tr>
+      <tr><td>PONS acquired</td><td>Net PONS received from the two-percent reserve allocation.</td></tr><tr><td>VANNO repurchased</td><td>VANNO acquired from the one-percent buyback allocation.</td></tr><tr><td>VANNO removed</td><td>Repurchased VANNO deposited into the published permanent-lock address.</td></tr>
+      <tr><td>PONS held</td><td>Current reserve balance controlled by the published treasury addresses.</td></tr>
+      <tr><td>PONS / VANNO</td><td>The reserve ratio: PONS held divided by circulating VANNO supply.</td></tr>
+    </table>
+  </section>
+
+  <section class="s" id="s6">
+    <div class="shead"><span class="n">06</span><h2>Acquisition policy</h2><span class="rule"></span></div>
+    <div class="body">
+      <p>Taxes accrue continuously, but the protocol should not execute on every trade. Claims are batched, then divided by policy: two thirds acquire PONS and one third repurchases VANNO. Both routes use bounded execution and publish their final destination.</p>
+      <ul>
+        <li><b>Claim threshold.</b> Fees remain in pons escrow until the balance is large enough to justify execution.</li>
+        <li><b>Bounded impact.</b> A single purchase may not exceed the published maximum share of available PONS liquidity.</li>
+        <li><b>Minimum output.</b> Each acquisition enforces an onchain minimum amount received; failed conditions defer rather than force the trade.</li>
+        <li><b>Observable routing.</b> Collector, PONS vault and VANNO permanent-lock addresses are disclosed before activation.</li><li><b>Zero operations share.</b> No percentage of creator tax is assigned to the team or operating wallet.</li>
+        <li><b>No invented NAV.</b> The interface displays unavailable values as unavailable until a reliable onchain calculation exists.</li>
+      </ul>
+    </div>
+    <div class="band">A treasury policy is credible only when an outsider can reconstruct it from transactions. <span class="m">Verification precedes narrative.</span></div>
+  </section>
+
+  <section class="s" id="s7">
+    <div class="shead"><span class="n">07</span><h2>Transparency covenant</h2><span class="rule"></span></div>
+    <div class="body">
+      <p>Before the first treasury claim, VANNO will publish a registry of relevant contracts and wallets. Changes to operational control will be announced against that registry rather than silently substituted in the interface.</p>
+    </div>
+    <table class="cov">
+      <tr><td>VANNO token</td><td>TBA - created through the pons v2 factory.</td></tr>
+      <tr><td>pairing asset</td><td>TBA - finalized and disclosed before launch.</td></tr>
+      <tr><td>fee escrow</td><td>Resolved from the pons stack that launches VANNO.</td></tr>
+      <tr><td>fee recipient</td><td>TBA - the address authorized to claim VANNO creator-tax balances.</td></tr>
+      <tr><td>PONS vault</td><td>TBA - the published address holding strategic PONS reserves.</td></tr><tr><td>VANNO lock</td><td>TBA - the irreversible destination for repurchased VANNO.</td></tr>
+      <tr><td>PONS token</td><td><span class="m">0x39dBED3a2bd333467115dE45665cC57F813C4571</span></td></tr>
+    </table>
+  </section>
+
+  <section class="s" id="s8">
+    <div class="shead"><span class="n">08</span><h2>Risks and limits</h2><span class="rule"></span></div>
+    <div class="body">
+      <p>VANNO is experimental crypto software, not a bank account, stablecoin, ETF or registered share. Its token can lose all value. A growing PONS balance does not guarantee a rising VANNO price, and trading volume can fall to zero.</p>
+      <p>Material risks include smart-contract failure, pons protocol changes, Robinhood Chain interruptions, thin liquidity, adverse execution, wallet compromise, regulatory treatment, inaccurate third-party indexing and severe movements in PONS or the pairing asset. The 3% creator tax also increases trading friction and may reduce volume.</p>
+    </div>
+    <div class="risk"><h3>LANGUAGE MATTERS</h3><p>"Treasury" describes VANNO's onchain reserve strategy. "Share," "stock" and "equity" should not be used to imply legal ownership in a corporation unless a separate compliant legal structure exists. Nothing on this page is an offer of securities or investment advice.</p></div>
+  </section>
+
+  <section class="s" id="s9">
+    <div class="shead"><span class="n">09</span><h2>Launch sequence</h2><span class="rule"></span></div>
+    <div class="roadmap">
+      <div><span>PHASE I</span><strong>Publish</strong><p>Finalize pairing asset, wallets, tax recipient and public treasury policy.</p></div>
+      <div><span>PHASE II</span><strong>Launch</strong><p>Create VANNO on pons v2 with the fixed 3% creator tax and disclose its CA.</p></div>
+      <div><span>PHASE III</span><strong>Accumulate</strong><p>Execute the 2% PONS reserve policy and 1% VANNO repurchase policy onchain.</p></div>
+    </div>
+  </section>
+
+  <div class="source" id="policy">
+    <div class="source-head"><span>treasury-policy.pseudo</span><span>SPECIFICATION - DRAFT</span></div>
+    <pre><span class="c">// VANNO treasury settlement - descriptive policy, not deployed code</span>
+
+<span class="k">const</span> CREATOR_TAX_BPS = <span class="v">300</span>;
+<span class="k">const</span> RESERVE_ASSET = <span class="v">PONS</span>;
+<span class="k">const</span> PONS_ALLOCATION_BPS = <span class="v">6_667</span>;<br><span class="k">const</span> VANNO_BUYBACK_BPS = <span class="v">3_333</span>;<br><span class="k">const</span> OPERATIONS_BPS = <span class="v">0</span>;
+
+<span class="k">function</span> settleTreasury() {
+    quote = ponsFeeEscrow.claim(VANNO);
+    require(quote >= CLAIM_THRESHOLD);
+
+    minPonsOut = oracleQuote(quote)
+        .applyMaxSlippage(MAX_SLIPPAGE_BPS);
+
+    ponsBudget = quote * PONS_ALLOCATION_BPS / 10_000;<br>    buybackBudget = quote - ponsBudget;<br><br>    ponsReceived = acquirePons(ponsBudget, minPonsOut);
+    PONS.transfer(PONS_VAULT, ponsReceived);<br>    vannoReceived = repurchaseVanno(buybackBudget);<br>    VANNO.transfer(PERMANENT_LOCK, vannoReceived);
+
+    emit TreasuryAcquisition(
+        quote,
+        ponsReceived,
+        PONS.balanceOf(PONS_VAULT)
+    );
+}
+
+<span class="c">// public invariant:
+// reported PONS held must equal observable balances
+// across the addresses in the published treasury registry.</span></pre>
+  </div>
+
+  <footer class="foot">vanno - trade activity into PONS reserves - built on Robinhood Chain through pons v2<br>independent project - unaffiliated with and not endorsed by Robinhood or pons - experimental software - no investment advice</footer>
+</main>
+</div>
+<div class="toast" id="toast"></div>
+<script>
+(function(){
+"use strict";
+var TAX=.03, W=720,H=400,svg=document.getElementById("chart"),NS="http://www.w3.org/2000/svg";
+function E(n,a){var e=document.createElementNS(NS,n);Object.keys(a||{}).forEach(function(k){e.setAttribute(k,a[k])});return e}
+function T(x,y,s,fill,anchor,size){var e=E("text",{x:x,y:y,fill:fill||"#68665e","font-family":"'IBM Plex Mono',monospace","font-size":size||9,"text-anchor":anchor||"start","letter-spacing":".05em"});e.textContent=s;return e}
+function rng(seed){return function(){seed|=0;seed=seed+0x6D2B79F5|0;var t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
+function draw(){
+ var accent="#b9dc42",hi="#d5f36d",rule="#24231d",text="#e8e5dc",faint="#68665e",muted="#97948a";
+ var L={x:48,y:64,w:360,h:235},R={x:476,y:58,w:198,h:286};
+
+ svg.appendChild(T(L.x,L.y-24,"CREATOR TAX RESPONSE",accent,"start",8));
+ svg.appendChild(T(L.x,L.y-11,"fixed function / no historical data",faint,"start",8));
+
+ [0,.25,.5,.75,1].forEach(function(q){
+   var y=L.y+L.h*(1-q);
+   svg.appendChild(E("line",{x1:L.x,y1:y,x2:L.x+L.w,y2:y,stroke:rule,"stroke-width":1}));
+   svg.appendChild(T(L.x-9,y+3,(3*q).toFixed(2),faint,"end",8));
+ });
+ [0,.25,.5,.75,1].forEach(function(q){
+   var x=L.x+L.w*q;
+   svg.appendChild(E("line",{x1:x,y1:L.y,x2:x,y2:L.y+L.h,stroke:rule,"stroke-width":.7,"stroke-dasharray":"2 6"}));
+   svg.appendChild(T(x,L.y+L.h+18,String(Math.round(100*q)),faint,q===0?"start":q===1?"end":"middle",8));
+ });
+ svg.appendChild(T(L.x,L.y+L.h+37,"TRADING VOLUME / PAIRING-ASSET UNITS",faint,"start",8));
+ var d="M"+L.x+" "+(L.y+L.h)+"L"+(L.x+L.w)+" "+L.y;
+ var glow=E("path",{d:d,fill:"none",stroke:accent,"stroke-width":7,opacity:.1});
+ var line=E("path",{d:d,fill:"none",stroke:hi,"stroke-width":1.8});
+ svg.appendChild(glow);svg.appendChild(line);
+ var len=line.getTotalLength();[glow,line].forEach(function(e){e.style.strokeDasharray=len;e.style.strokeDashoffset=len});
+ var dot=E("circle",{cx:L.x,cy:L.y+L.h,r:3.5,fill:text});svg.appendChild(dot);
+ var badge=E("rect",{x:L.x+205,y:L.y+21,width:146,height:50,fill:"#171813",stroke:"#3e4822"});svg.appendChild(badge);
+ svg.appendChild(T(L.x+220,L.y+40,"AT 100 VOLUME",faint,"start",7));
+ svg.appendChild(T(L.x+220,L.y+59,"T = 3.00 UNITS",hi,"start",14));
+
+ svg.appendChild(T(R.x,R.y-18,"TREASURY ROUTE",accent,"start",8));
+ svg.appendChild(T(R.x+R.w,R.y-18,"STATE MACHINE",faint,"end",7));
+ var stages=[
+   {n:"01",name:"VANNO TRADE",sub:"buy or sell settles"},
+   {n:"02",name:"FEE ESCROW",sub:"3% creator tax accrues"},
+   {n:"03",name:"POLICY SPLIT",sub:"2% PONS / 1% VANNO"},
+   {n:"04",name:"DUAL OUTPUT",sub:"PONS held / VANNO locked"}
+ ];
+ stages.forEach(function(s,i){
+   var y=R.y+i*67;
+   svg.appendChild(E("rect",{x:R.x,y:y,width:R.w,height:50,fill:i===3?"#171b0f":"#0e0d0c",stroke:i===3?"#617522":rule}));
+   svg.appendChild(T(R.x+11,y+19,s.n,i===3?hi:faint,"start",7));
+   svg.appendChild(T(R.x+37,y+20,s.name,i===3?text:muted,"start",9));
+   svg.appendChild(T(R.x+37,y+36,s.sub,faint,"start",7));
+   if(i<3){
+     svg.appendChild(E("line",{x1:R.x+18,y1:y+50,x2:R.x+18,y2:y+67,stroke:accent,"stroke-width":1}));
+     svg.appendChild(E("path",{d:"M"+(R.x+15)+" "+(y+63)+"L"+(R.x+18)+" "+(y+67)+"L"+(R.x+21)+" "+(y+63),fill:"none",stroke:accent,"stroke-width":1}));
+   }
+ });
+ svg.appendChild(T(R.x,R.y+R.h+18,"OBSERVABLE AFTER DEPLOYMENT",faint,"start",7));
+
+ var start=performance.now(),duration=1800;
+ function animate(now){
+   var p=Math.min((now-start)/duration,1),e=1-Math.pow(1-p,3);
+   line.style.strokeDashoffset=len*(1-e);glow.style.strokeDashoffset=len*(1-e);
+   var pt=line.getPointAtLength(len*e);dot.setAttribute("cx",pt.x);dot.setAttribute("cy",pt.y);
+   if(p<1)requestAnimationFrame(animate)
+ }
+ requestAnimationFrame(animate);
+}
+draw();
+var toast=document.getElementById("toast");function note(s){toast.textContent=s;toast.classList.add("show");clearTimeout(note.t);note.t=setTimeout(function(){toast.classList.remove("show")},2200)}
+var chain={chainId:"0x1237",chainName:"Robinhood Chain",nativeCurrency:{name:"Ether",symbol:"ETH",decimals:18},rpcUrls:["https://rpc.mainnet.chain.robinhood.com"],blockExplorerUrls:["https://robinhoodchain.blockscout.com"]};
+document.getElementById("pons-ca").onclick=function(){var ca=this.dataset.ca;navigator.clipboard&&navigator.clipboard.writeText(ca);document.getElementById("copy-hint").textContent="copied OK";note("PONS contract copied")};
+document.getElementById("volume").oninput=function(){var v=Math.max(0,Number(this.value)||0);document.getElementById("tax-result").textContent=(v*TAX).toLocaleString(undefined,{maximumFractionDigits:4})+" ETH";document.getElementById("split-result").textContent="At "+v.toLocaleString()+" ETH volume: "+(v*.02).toLocaleString(undefined,{maximumFractionDigits:4})+" ETH targets PONS / "+(v*.01).toLocaleString(undefined,{maximumFractionDigits:4})+" ETH targets VANNO buyback / 0 operations."};
+fetch(chain.rpcUrls[0],{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify({jsonrpc:"2.0",id:1,method:"eth_blockNumber",params:[]})}).then(function(r){return r.json()}).then(function(d){if(d.result)document.getElementById("chain-state").textContent="block "+parseInt(d.result,16).toLocaleString()}).catch(function(){});
+})();
+</script>
+</body>
+</html>
